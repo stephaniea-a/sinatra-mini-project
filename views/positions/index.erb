@@ -1,2 +1,12 @@
-<h1>HOMEPAGE</h1>
+<h1><%= @title %></h1>
 
+<p>Welcome to Yoga Positions</p>
+
+<% @positions.each do |position| %>
+<div>
+	<h3><%= position.title %></h3>
+	<p><%= position.description %></p>
+	<p>Difficulty rating: <%= position.rating %></p>
+
+</div>
+<% end %>

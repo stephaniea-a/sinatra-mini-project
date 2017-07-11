@@ -12,7 +12,10 @@ class PositionsController < Sinatra::Base
 
 	#INDEX
 	get "/" do
-		
+		@title = "Yoga Positions"
+
+		@positions = Position.all
+
 		erb :'positions/index'
 	end
 
