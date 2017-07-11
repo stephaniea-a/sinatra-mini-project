@@ -27,7 +27,9 @@ class PositionsController < Sinatra::Base
 
 	#SHOW
 	get "/:id" do
-		
+		id = params[:id].to_i
+
+		@position = Position.find id
 		erb :"positions/show"
 	end
 

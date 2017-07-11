@@ -31,5 +31,28 @@ class Position
 		position
 	end
 
-	
+	def self.find id
+		conn = self.open_connection
+		sql = "SELECT * FROM positions WHERE id = #{id}"
+		result = conn.exec(sql)
+
+		self.hydrate result[0]
+
+	end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end
