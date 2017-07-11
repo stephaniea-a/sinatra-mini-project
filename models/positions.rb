@@ -54,6 +54,12 @@ class Position
 
 	end
 
+	def self.destroy id
+		conn = self.open_connection
+		sql = "DELETE FROM positions WHERE id = #{id}"
+		result = conn.exec(sql)
+	end
+
 
 
 

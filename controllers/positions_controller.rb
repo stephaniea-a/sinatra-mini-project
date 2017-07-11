@@ -76,6 +76,11 @@ class PositionsController < Sinatra::Base
 
 	#DELETE
 	delete "/:id" do
+		id = params[:id].to_i
+
+		Position.destroy id
+
+		redirect :"/"
 
 	end
 

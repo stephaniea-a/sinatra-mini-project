@@ -4,10 +4,10 @@
 
 <% @positions.each do |position| %>
 <div>
-	<h3><%= position.title %></h3>
+	<h3><a href="<%= position.id %>"><%= position.title %></a></h3>
 	<img src="<%= position.image %> ">
 	<p><%= position.description %></p>
-	<p>Difficulty rating: <%= position.rating %></p>
+	<p>Difficulty rating: <%= position.rating %>/5</p>
 
 </div>
 <% end %>
