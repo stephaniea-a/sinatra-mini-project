@@ -6,7 +6,7 @@ CREATE TABLE positions (
 	title VARCHAR(255),
 	description TEXT,
 	rating INTEGER,
-	image TEXT
+	image varchar(2083)
 
 );
 

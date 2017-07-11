@@ -1,14 +1,15 @@
-<h1>Yoga Poses</h1>
+<h1>Yoga Positions</h1>
+<div>
+	<h3><%=@position.title %></h3>
+	<img src="<%= @position.image %>">
+	<p><%= @position.description %></p>
+	<p>Difficulty rating: <%= @position.rating %></p>
+	<a href="<%= @position.id%>/edit ">Edit</a>
+</div>
+	
 
-<h3><%=@position.title %></h3>
-<img src="<%= @position.image %>">
-<p><%= @position.description %></p>
-<p>Difficulty rating: <%= @position.rating %></p>
+	<form method="POST" action="/<%= @position.id %>">
+		<input type="hidden" name="_method" value="DELETE">
+		<input type="submit" value="Delete">
 
-<a href="<%= @position.id%>/edit ">Edit a pose</a>
-
-<form method="POST" action="/<%= @position.id %>">
-	<input type="hidden" name="_method" value="DELETE">
-	<input type="submit" value="Delete">
-
-</form>
+	</form>
