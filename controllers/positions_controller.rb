@@ -30,22 +30,47 @@ class PositionsController < Sinatra::Base
 		id = params[:id].to_i
 
 		@position = Position.find id
+
 		erb :"positions/show"
 	end
 
 	#CREATE
 	post "/" do
+		position = Position.new
 
+		position.title = params[:title]
+		position.image = params[:image]
+		position.description = params[:description]
+		position.rating = params[:rating]
+
+		position.save
+
+		redirect :"/"
 	end
 
 	#EDIT
 	get "/:id/edit" do
-		
-		erb :"positions/show"
+		id = params[:id]
+
+		@position = Position.find id
+
+		erb :"positions/edit"
 	end
 
 	#UPDATE
 	put "/:id" do
+		id = params[:id].to_i
+
+		position = Position.find id
+
+		position.title = params[:title] 
+		position.image = params[:image]
+		position.description = params[:description]
+		position.rating = params[:rating] 
+
+		position.update
+
+		redirect  :"/"
 
 	end
 

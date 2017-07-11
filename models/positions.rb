@@ -40,6 +40,19 @@ class Position
 
 	end
 
+	def save
+		conn = Position.open_connection
+		sql = "INSERT INTO positions (title, image, description, rating) VALUES ('#{self.title}','#{self.image}','#{self.description}', '#{self.rating}')"
+		result = conn.exec(sql)
+
+	end
+
+	def update
+		conn = Position.open_connection
+		sql = "UPDATE positions SET title='#{self.title}', image ='#{self.image}', description='#{self.description}', rating='#{self.rating}' WHERE id = #{self.id}"
+		result = conn.exec(sql)
+
+	end
 
 
 

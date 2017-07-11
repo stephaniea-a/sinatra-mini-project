@@ -1,1 +1,33 @@
 <h1>EDIT</h1>
+
+<form action="/<%= @position.id %>" method="POST">
+	<input type="hidden" name="_method" method="PUTS">
+
+	<label>Title</label>
+	<br>
+	<br>
+	<input type="text" name="title" value="<%= @position.title %>">
+	<br>
+	<br>
+	<label>Image URL</label>
+	<br>
+	<br>
+	<input type="text" name="url" value="<%= @position.image %>">
+	<br>
+	<br>
+	<label>Description</label>
+	<br>
+	<br>
+	<textarea name="description"><%= @position.description %></textarea>
+	<br>
+	<br>
+	<label>Rating</label>
+	<br>
+	<br>
+	<input type="number" name="rating" value="<%= @position.rating%>">
+	<br>
+	<br>
+	<input type="submit" name="Update position">
+
+
+</form>
