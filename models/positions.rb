@@ -1,5 +1,5 @@
 class Position
-	attr_accessor :id, :title, :description, :rating
+	attr_accessor :id, :title, :description, :rating, :image
 
 	def self.open_connection
 		PG.connect( dbname: "fitness")
@@ -13,6 +13,8 @@ class Position
 		position.title = position_data['title']
 		position.description = position_data['description']
 		position.rating = position_data['rating']
+		position.image = position_data['image']
+
 
 		position
 
@@ -27,7 +29,7 @@ class Position
 			self.hydrate position
 		end
 		position
-
-
 	end
+
+	
 end
